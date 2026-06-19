@@ -5,13 +5,36 @@ export default function Portfolio() {
     <section className="portfolio" id="work">
       <div className="container">
 
-        <h2>My Work</h2>
+        <h2>Our Work</h2>
 
         <div className="projects">
 
-          <div className="project">Project 1</div>
-          <div className="project">Project 2</div>
-          <div className="project">Project 3</div>
+          <div
+            className="project"
+            style={{ backgroundImage: "url('/images/project1.jpg')" }}
+          >
+            <div className="overlay">
+              <h3>Music Promotion</h3>
+            </div>
+          </div>
+
+          <div
+            className="project"
+            style={{ backgroundImage: "url('/images/project2.jpg')" }}
+          >
+            <div className="overlay">
+              <h3>Event Management</h3>
+            </div>
+          </div>
+
+          <div
+            className="project"
+            style={{ backgroundImage: "url('/images/project3.jpg')" }}
+          >
+            <div className="overlay">
+              <h3>Brand Campaigns</h3>
+            </div>
+          </div>
 
         </div>
 

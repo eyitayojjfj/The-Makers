@@ -1,38 +1,334 @@
-*{
+/* ====================================
+   RESET
+==================================== */
+* {
   margin: 0;
-  padding: o;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ====================================
+   SERVICES SECTION
+==================================== */
 .services {
-  padding: 100px 20px;
-  padding-bottom: 250px;
-  background: #fff;
+  min-height: 100vh;
+  padding: 120px 20px;
+  overflow-x: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #660000 0%,
+    #4D0000 50%,
+    #ffffff 100%
+  );
 }
 
-.container {
-  max-width: 1100px;
+/* ====================================
+   CONTAINER
+==================================== */
+.services .container {
+  max-width: 1200px;
   margin: auto;
-  text-align: center;
 }
 
-.services h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
+/* ====================================
+   MOVING SERVICES TEXT
+==================================== */
+.services-marquee {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 80px;
+  position: relative;
 }
 
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.services-track {
+  display: flex;
+  width: fit-content;
+  animation: marquee 18s linear infinite;
+  will-change: transform;
 }
 
-.card {
-  padding: 30px;
-  background: #f7f7f7;
-  border-radius: 10px;
-  transition: 0.3s;
+.services-track span {
+  white-space: nowrap;
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 900;
+  color: rgba(249, 197, 23, 0.15);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-right: 50px;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  background: #eee;
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ====================================
+   SERVICE SECTION
+==================================== */
+.service-section {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* ====================================
+   SERVICE BLOCK
+==================================== */
+.service-block {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  animation: fadeUp 1s ease forwards;
+}
+
+/* ====================================
+   HEADINGS
+==================================== */
+.service-block h3 {
+  color: #F9C517;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.service-block h3::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin-top: 10px;
+  background: #F9C517;
+  border-radius: 50px;
+}
+
+/* ====================================
+   PARAGRAPHS
+==================================== */
+.service-block p {
+  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 2;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* ====================================
+   FADE UP ANIMATION
+==================================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====================================
+   HOVER EFFECT
+==================================== */
+.service-block h3 {
+  transition: 0.3s ease;
+}
+
+.service-block:hover h3 {
+  transform: translateX(10px);
+}
+
+/* ====================================
+   LARGE DESKTOPS (1440px+)
+==================================== */
+@media (min-width: 1440px) {
+  .services {
+    padding: 140px 60px;
+  }
+
+  .service-block {
+    max-width: 1100px;
+  }
+
+  .service-block p {
+    font-size: 1.2rem;
+    line-height: 2.2;
+  }
+
+  .services-track span {
+    font-size: 8rem;
+  }
+}
+
+/* ====================================
+   DESKTOPS & LAPTOPS
+==================================== */
+@media (max-width: 1200px) {
+  .services .container {
+    max-width: 95%;
+  }
+
+  .service-block {
+    max-width: 900px;
+  }
+}
+
+/* ====================================
+   TABLET LANDSCAPE
+==================================== */
+@media (max-width: 992px) {
+  .services {
+    padding: 100px 25px;
+  }
+
+  .services-marquee {
+    margin-bottom: 60px;
+  }
+
+  .service-section {
+    gap: 70px;
+  }
+
+  .service-block h3::after {
+    width: 70px;
+  }
+
+  .service-block p {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+}
+
+/* ====================================
+   TABLET PORTRAIT
+==================================== */
+@media (max-width: 768px) {
+  .services {
+    padding: 80px 20px;
+  }
+
+  .services-marquee {
+    margin-bottom: 50px;
+  }
+
+  .services-track span {
+    font-size: clamp(3rem, 8vw, 5rem);
+    letter-spacing: 3px;
+    margin-right: 30px;
+  }
+
+  .service-section {
+    gap: 60px;
+  }
+
+  .service-block h3 {
+    margin-bottom: 20px;
+  }
+
+  .service-block p {
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: left;
+  }
+}
+
+/* ====================================
+   LARGE PHONES
+==================================== */
+@media (max-width: 576px) {
+  .services {
+    padding: 70px 18px;
+  }
+
+  .services-track span {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+
+  .service-section {
+    gap: 50px;
+  }
+
+  .service-block h3 {
+    font-size: 1.6rem;
+  }
+
+  .service-block h3::after {
+    width: 60px;
+    height: 3px;
+  }
+
+  .service-block p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+}
+
+/* ====================================
+   SMALL PHONES
+==================================== */
+@media (max-width: 480px) {
+  .services {
+    padding: 60px 15px;
+  }
+
+  .services-marquee {
+    margin-bottom: 40px;
+  }
+
+  .services-track span {
+    font-size: 2.5rem;
+    margin-right: 20px;
+  }
+
+  .service-section {
+    gap: 40px;
+  }
+
+  .service-block h3 {
+    font-size: 1.4rem;
+  }
+
+  .service-block p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+}
+
+/* ====================================
+   EXTRA SMALL DEVICES
+==================================== */
+@media (max-width: 320px) {
+  .services {
+    padding: 50px 12px;
+  }
+
+  .services-track span {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .service-block h3 {
+    font-size: 1.2rem;
+  }
+
+  .service-block h3::after {
+    width: 50px;
+  }
+
+  .service-block p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
 }

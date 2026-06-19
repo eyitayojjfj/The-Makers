@@ -1,28 +1,162 @@
-
 .contact {
-  padding: 100px 20px;
-  padding-bottom: 180px;
-  background: #fff;
+  min-height: 100vh;
+  padding: 120px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #F9C517 40%,
+    #4D0000 100%
+  );
+}
+
+.contact .container {
+  width: 100%;
+  max-width: 650px;
+
+  padding: 50px 40px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(249, 197, 23, 0.2);
+
+  animation: fadeUp 1s ease forwards;
+}
+
+.contact h2 {
+  text-align: center;
+  color: #F9C517;
+
+  font-size: clamp(2rem, 5vw, 3rem);
+
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 form {
-  max-width: 500px;
-  margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 
-input, textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+input,
+textarea {
+  width: 100%;
+
+  padding: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background: rgba(255, 255, 255, 0.15);
+
+  color: white;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  font-size: 1rem;
+
+  transition: all 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+input:focus,
+textarea:focus {
+  border-color: #F9C517;
+
+  box-shadow:
+    0 0 12px rgba(249, 197, 23, 0.4);
+
+  background: rgba(255, 255, 255, 0.2);
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
 }
 
 button {
-  padding: 12px;
-  background: #000;
-  color: #fff;
+  padding: 15px;
+
   border: none;
+  border-radius: 12px;
+
+  background: #F9C517;
+  color: #4D0000;
+
+  font-size: 1rem;
+  font-weight: 700;
+
   cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .contact {
+    padding: 80px 20px;
+  }
+
+  .contact .container {
+    padding: 40px 25px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .contact {
+    padding: 60px 15px;
+  }
+
+  .contact .container {
+    padding: 30px 20px;
+    border-radius: 18px;
+  }
+
+  input,
+  textarea,
+  button {
+    font-size: 0.95rem;
+  }
 }

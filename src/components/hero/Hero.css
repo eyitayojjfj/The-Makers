@@ -24,11 +24,24 @@ section {
 
 .subtitle {
   font-family: "Lucida Console", "Courier New", monospace;
-  font-size: px;
+  font-size: 1rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: grey;
-  margin-bottom: 10px;
+
+  white-space: nowrap;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero h1 {
@@ -65,4 +78,316 @@ section {
   color: #000;
   text-decoration: none;
   border-radius: 6px;
+}
+
+.vision-mission {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  padding: 100px 20px;
+
+ background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #F9C517 40%,
+    #4D0000 100%
+  );
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 40px 35px;
+
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25),
+    0 0 20px rgba(249, 197, 23, 0.15);
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.4s ease;
+}
+
+.card::before {
+  content: "";
+
+  position: absolute;
+  top: -80px;
+  right: -80px;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background: rgba(249, 197, 23, 0.15);
+
+  filter: blur(40px);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(249, 197, 23, 0.35);
+}
+
+.card h1 {
+  color: #F9C517;
+
+  font-size: clamp(2rem, 5vw, 3rem);
+
+  margin-bottom: 20px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.card h1::after {
+  content: "";
+
+  display: block;
+
+  width: 70px;
+  height: 4px;
+
+  margin-top: 10px;
+
+  background: #F9C517;
+  border-radius: 20px;
+}
+
+.card p {
+  color: black;
+
+  font-size: 1.05rem;
+  line-height: 1.9;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* Animation */
+.card {
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .vision-mission {
+    padding: 80px 20px;
+    gap: 25px;
+  }
+
+  .card {
+    padding: 35px 25px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .vision-mission {
+    padding: 60px 15px;
+  }
+
+  .card {
+    padding: 30px 20px;
+    border-radius: 18px;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+}
+
+/* ===================================
+   ROTATING CIRCULAR TEXT
+=================================== */
+
+.creative-circle {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+
+  width: 220px;
+  height: 220px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 10;
+
+  animation: rotateCircle 20s linear infinite;
+}
+
+.creative-circle svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.circle-text {
+  fill: #F9C517;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Optional glow */
+.circle-text {
+  filter: drop-shadow(0 0 8px rgba(249, 197, 23, 0.4));
+}
+
+/* Rotation */
+
+@keyframes rotateCircle {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===================================
+   LARGE DESKTOPS
+=================================== */
+
+@media screen and (min-width: 1440px) {
+  .creative-circle {
+    width: 260px;
+    height: 260px;
+
+    left: 60px;
+    bottom: 60px;
+  }
+
+  .circle-text {
+    font-size: 16px;
+    letter-spacing: 4px;
+  }
+}
+
+/* ===================================
+   LAPTOPS
+=================================== */
+
+@media screen and (max-width: 1200px) {
+  .creative-circle {
+    width: 200px;
+    height: 200px;
+
+    left: 30px;
+    bottom: 30px;
+  }
+
+  .circle-text {
+    font-size: 13px;
+  }
+}
+
+/* ===================================
+   TABLETS
+=================================== */
+
+@media screen and (max-width: 992px) {
+  .creative-circle {
+    width: 170px;
+    height: 170px;
+
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .circle-text {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media screen and (max-width: 768px) {
+  .creative-circle {
+    width: 130px;
+    height: 130px;
+
+    left: 15px;
+    bottom: 15px;
+  }
+
+  .circle-text {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* ===================================
+   SMALL PHONES
+=================================== */
+
+@media screen and (max-width: 480px) {
+  .creative-circle {
+    width: 100px;
+    height: 100px;
+
+    left: 10px;
+    bottom: 10px;
+  }
+
+  .circle-text {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+}
+
+/* ===================================
+   VERY SMALL PHONES
+=================================== */
+
+@media screen and (max-width: 360px) {
+  .creative-circle {
+    width: 85px;
+    height: 85px;
+  }
+
+  .circle-text {
+    font-size: 5px;
+    letter-spacing: 0.5px;
+  }
 }

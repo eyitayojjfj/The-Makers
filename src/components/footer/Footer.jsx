@@ -26,19 +26,19 @@ export default function Footer() {
       <div className="footer-contact">
         <FaEnvelope />
         <a href="mailto:info@themakers.com">
-          info@themakers.com
+          officialthemakersent@gmail.com
         </a>
       </div>
 
       <h3>Keep tabs with us</h3>
 
       <div className="footer-socials">
-        <a href="#"><FaInstagram /></a>
-        <a href="#"><FaXTwitter /></a>
-        <a href="#"><FaYoutube /></a>
-        <a href="#"><FaWhatsapp /></a>
-        <a href="#"><FaTiktok /></a>
-        <a href="#"><FaLinkedin /></a>
+        <a href="https://www.instagram.com/the.makers_entertainment?igsh=ZmhqbTFoaG5kZGt3"><FaInstagram /></a>
+        <a href="https://x.com/themakers_ent?s=21"><FaXTwitter /></a>
+        {/* <a href="#"><FaYoutube /></a> */}
+       <a href="https://wa.me/2347041182791"><FaWhatsapp /></a> 
+        <a href="https://www.tiktok.com/@themakers_entertainment?_r=1&_t=ZS-978PdvdCFZh"><FaTiktok /></a>
+        {/* <a href="#"><FaLinkedin /></a> */}
       </div>
     </div>
 

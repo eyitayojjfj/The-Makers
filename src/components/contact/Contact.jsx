@@ -5,7 +5,7 @@ export default function Contact() {
     <section className="contact" id="contact">
       <div className="container">
 
-        <h2>Contact Me</h2>
+        <h2>Get In Touch</h2>
 
         <form>
           <input type="text" placeholder="Your Name" />
