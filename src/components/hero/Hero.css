@@ -31,6 +31,18 @@ section {
 
   white-space: nowrap;
 }
+.create{
+  padding-top: 50px;
+}
+.create h1 {
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: black;
+
+  white-space: nowrap;
+}
 
 .cursor {
   display: inline-block;
@@ -228,6 +240,15 @@ section {
     font-size: 0.95rem;
     line-height: 1.8;
   }
+  .create h1 {
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: black;
+
+  white-space: nowrap;
+}
 }
 
 /* ===================================

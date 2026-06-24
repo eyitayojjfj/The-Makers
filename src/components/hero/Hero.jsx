@@ -90,6 +90,8 @@ export default function Hero() {
           </p>
         </div>
 
+        <div className="create"> <h1>Create. Connect. Elevate</h1></div>
+
       </div>
     </div>
   );

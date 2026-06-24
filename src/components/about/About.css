@@ -122,3 +122,6 @@ font-family: sans-serif;  line-height: 1.9;
 body {
   overflow-x: hidden;
 }
+.img{
+  padding-top: 40px;
+}
