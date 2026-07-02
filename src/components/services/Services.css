@@ -214,8 +214,7 @@ html {
 ==================================== */
 @media (max-width: 768px) {
   .services {
-    padding: 80px 20px;
-  }
+  padding: 120px 20px 80px;  }
 
   .services-marquee {
     margin-bottom: 50px;
@@ -247,7 +246,7 @@ html {
 ==================================== */
 @media (max-width: 576px) {
   .services {
-    padding: 70px 18px;
+  padding: 120px 20px 80px;
   }
 
   .services-track span {
@@ -280,7 +279,8 @@ html {
 ==================================== */
 @media (max-width: 480px) {
   .services {
-    padding: 60px 15px;
+        padding: 140px 20px 70px;
+
   }
 
   .services-marquee {
@@ -311,7 +311,8 @@ html {
 ==================================== */
 @media (max-width: 320px) {
   .services {
-    padding: 50px 12px;
+        padding: 140px 20px 70px;
+
   }
 
   .services-track span {
