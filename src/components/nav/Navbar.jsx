@@ -11,8 +11,8 @@ export default function Navbar() {
         
         {/* Logo */}
         <div className="logo">
-          <h1>The MAKERS</h1>
-          {/* <img src="/images/the.jpeg" width="70" height="52" alt="Logo" /> */}
+          
+         <img src="/images/mark.png" width="70" height="52" alt="Logo" /> 
         </div>
 
         {/* Hamburger Menu */}
