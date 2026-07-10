@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Space Grotesk',sans-serif;
+}
+
+.welcome-screen{
+    position:fixed;
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        #4D0000 0%,
+        #660000 60%,
+        #3A0000 100%
+    );
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    z-index:999999;
+}
+
+.welcome-screen h2{
+    color:#F1F3F4;
+
+    font-size:clamp(1.2rem,2vw,2rem);
+
+    font-weight:500;
+
+    letter-spacing:8px;
+
+    margin-bottom:10px;
+
+    text-transform:uppercase;
+
+    animation:slideLeft .9s ease;
+}
+
+.welcome-screen h1{
+    color:#F9C517;
+
+    font-size:clamp(2.5rem,6vw,5rem);
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+
+    text-transform:uppercase;
+
+    animation:slideRight 1s ease;
+}
+
+.welcome-screen p{
+    color:#F1F3F4;
+
+    font-size:clamp(.95rem,2vw,1.3rem);
+
+    letter-spacing:4px;
+
+    animation:fadeIn 2s ease;
+}
+
+/* Decorative line */
+.welcome-screen::after{
+    content:"";
+
+    width:120px;
+    height:4px;
+
+    background:#F9C517;
+
+    margin-top:30px;
+
+    border-radius:50px;
+
+    animation:growLine 1.5s ease;
+}
+
+/* Animations */
+
+@keyframes slideLeft{
+    from{
+        opacity:0;
+        transform:translateX(-120px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes slideRight{
+    from{
+        opacity:0;
+        transform:translateX(120px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes growLine{
+    from{
+        width:0;
+    }
+
+    to{
+        width:120px;
+    }
+}
+
+/* =======================
+        TABLETS
+======================= */
+
+@media(max-width:992px){
+
+.welcome-screen h1{
+    font-size:3.5rem;
+}
+
+.welcome-screen h2{
+    font-size:1.4rem;
+    letter-spacing:6px;
+}
+
+.welcome-screen p{
+    font-size:1rem;
+}
+
+}
+
+/* =======================
+        MOBILE
+======================= */
+
+@media(max-width:768px){
+
+.welcome-screen{
+    padding:20px;
+}
+
+.welcome-screen h1{
+    font-size:2.8rem;
+    letter-spacing:2px;
+}
+
+.welcome-screen h2{
+    font-size:1.1rem;
+    letter-spacing:4px;
+}
+
+.welcome-screen p{
+    font-size:.95rem;
+    letter-spacing:2px;
+}
+
+.welcome-screen::after{
+    width:90px;
+}
+
+}
+
+/* =======================
+      SMALL PHONES
+======================= */
+
+@media(max-width:480px){
+
+.welcome-screen h1{
+    font-size:2.2rem;
+}
+
+.welcome-screen h2{
+    font-size:.95rem;
+}
+
+.welcome-screen p{
+    font-size:.85rem;
+}
+
+.welcome-screen::after{
+    width:70px;
+}
+
+}

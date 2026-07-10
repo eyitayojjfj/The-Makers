@@ -1,33 +1,47 @@
-import About from './components/about/About'
-import Contact from './components/contact/Contact'
-import Footer from './components/footer/Footer'
-import Hero from './components/hero/Hero'
-import Navbar from './components/nav/Navbar'
-import Portfolio from './components/portfolio/Portfolio'
-import Process from './components/process/Process'
-import Services from './components/services/Services'
-import './App.css'
-import { Route, Routes } from 'react-router'
+import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router";
+
+import "./App.css";
+
+import Navbar from "./components/nav/Navbar";
+import Hero from "./components/hero/Hero";
+import About from "./components/about/About";
+import Portfolio from "./components/portfolio/Portfolio";
+import Services from "./components/services/Services";
+import Contact from "./components/contact/Contact";
+import Footer from "./components/footer/Footer";
+import Welcome from "./components/welcome/Welcome";
 
 function App() {
-  
+  const [showWelcome, setShowWelcome] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowWelcome(false);
+    }, 3000); // Show for 3 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (showWelcome) {
+    return <Welcome />;
+  }
 
   return (
     <>
-  <div >
-     <Navbar />
-    <Routes>
-      <Route path='/' element={<Hero/>} />
-      <Route path='/about' element={<About/>} />
-      <Route path='/portfolio' element={<Portfolio/>} />
-      <Route path='/services' element={<Services/>}/>
-      <Route path='/contact' element={<Contact/>}/>
-          </Routes>
-      <Footer/>
-  </div>
-  
-   </>
-  )
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
+      <Footer />
+    </>
+  );
 }
 
-export default App
+export default App;

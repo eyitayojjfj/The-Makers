@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 import "./Hero.css";
 
 export default function Hero() {
@@ -35,9 +36,11 @@ export default function Hero() {
           </p>
 
           {/* BUTTONS */}
-          <div className="hero-buttons">
-            <a href="#contact" className="btn-primary">Contact Us</a>
-          </div>
+         <div className="hero-buttons">
+  <Link to="/contact" className="btn-primary">
+    Contact Us
+  </Link>
+</div>
 
           {/* ROTATING CIRCLE TEXT */}
           <div className="creative-circle">

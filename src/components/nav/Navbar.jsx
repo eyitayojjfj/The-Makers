@@ -10,9 +10,10 @@ export default function Navbar() {
       <div className="navbar-container">
         
         {/* Logo */}
-        <div className="logo">
-          
+        <div  className="logo">
+          <Link to="/">
          <img src="/images/mark.png" width="70" height="52" alt="Logo" /> 
+         </Link>
         </div>
 
         {/* Hamburger Menu */}

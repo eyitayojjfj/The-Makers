@@ -16,7 +16,7 @@ export default function Services() {
        
 
         <div className="service-section">
-
+<h1>What We Do</h1>
           {/* Events */}
           <div className="service-block">
             <h3>Events & Experiences</h3>
