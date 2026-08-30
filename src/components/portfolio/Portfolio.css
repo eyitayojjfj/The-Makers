@@ -1,6 +1,10 @@
-/* Portfolio Section */
+/* =========================
+   PORTFOLIO SECTION
+========================= */
+
 .portfolio {
   min-height: 100vh;
+
   padding: 120px 20px;
 
   background: linear-gradient(
@@ -9,18 +13,29 @@
     #F9C517 40%,
     #4D0000 100%
   );
+
+  overflow: hidden;
 }
 
-/* Container */
+
+/* =========================
+   CONTAINER
+========================= */
+
 .portfolio .container {
   max-width: 1300px;
   width: 100%;
 
   margin: 0 auto;
+
   overflow-x: hidden;
 }
 
-/* Heading */
+
+/* =========================
+   HEADING
+========================= */
+
 .portfolio h2 {
   text-align: center;
 
@@ -31,10 +46,15 @@
   margin-bottom: 60px;
 
   text-transform: uppercase;
+
   letter-spacing: 3px;
 }
 
-/* Projects Grid */
+
+/* =========================
+   OLD PROJECT GRID
+========================= */
+
 .projects {
   display: grid;
 
@@ -45,11 +65,16 @@
   width: 100%;
 }
 
-/* Project Card */
+
+/* =========================
+   PROJECT CARD
+========================= */
+
 .project {
   position: relative;
 
   width: 100%;
+
   min-width: 0;
 
   height: 400px;
@@ -59,7 +84,9 @@
   overflow: hidden;
 
   background-size: cover;
+
   background-position: center;
+
   background-repeat: no-repeat;
 
   cursor: pointer;
@@ -70,11 +97,16 @@
     0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* Dark Overlay */
+
+/* =========================
+   PROJECT OVERLAY
+========================= */
+
 .project::before {
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   background: linear-gradient(
@@ -86,7 +118,11 @@
   transition: 0.4s ease;
 }
 
-/* Hover */
+
+/* =========================
+   PROJECT HOVER
+========================= */
+
 .project:hover {
   transform: scale(1.02);
 
@@ -103,23 +139,35 @@
   );
 }
 
-/* Center Content */
+
+/* =========================
+   PROJECT CONTENT
+========================= */
+
 .overlay {
   position: absolute;
+
   inset: 0;
 
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 
   z-index: 2;
 }
 
-/* Project Title */
+
+/* =========================
+   PROJECT TITLE
+========================= */
+
 .overlay h3 {
   color: white;
 
   font-size: 2rem;
+
   font-weight: 700;
 
   text-align: center;
@@ -133,87 +181,485 @@
 
 .project:hover .overlay h3 {
   color: #F9C517;
+
   transform: scale(1.1);
 }
 
-/* Large Tablets */
+
+/* ==================================================
+   11 IMAGE PORTFOLIO GALLERY
+================================================== */
+
+.wk-images {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  grid-auto-rows: 260px;
+
+  gap: 18px;
+
+  width: 100%;
+
+  margin-top: 40px;
+}
+
+
+/* =========================
+   IMAGE BOX
+========================= */
+
+.work-image {
+  position: relative;
+
+  width: 100%;
+
+  height: 100%;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #4D0000;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+
+  /* Animation */
+  opacity: 0;
+
+  animation: galleryReveal 0.8s ease forwards;
+}
+
+
+/* =========================
+   STAGGERED ANIMATION
+========================= */
+
+.work-image:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.work-image:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.work-image:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.work-image:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.work-image:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.work-image:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.work-image:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.work-image:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.work-image:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+.work-image:nth-child(10) {
+  animation-delay: 1s;
+}
+
+.work-image:nth-child(11) {
+  animation-delay: 1.1s;
+}
+
+
+/* =========================
+   IMAGES
+========================= */
+
+.work-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.5s ease;
+}
+
+
+/* =========================
+   IMAGE OVERLAY
+========================= */
+
+.work-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(77, 0, 0, 0.75)
+  );
+
+  opacity: 0;
+
+  transition:
+    opacity 0.5s ease;
+}
+
+
+/* =========================
+   IMAGE HOVER
+========================= */
+
+.work-image:hover {
+
+  transform: translateY(-8px) scale(1.02);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.25),
+    0 0 25px rgba(249, 197, 23, 0.35);
+}
+
+
+.work-image:hover img {
+
+  transform: scale(1.1);
+
+  filter: brightness(0.85);
+}
+
+
+.work-image:hover::after {
+
+  opacity: 1;
+}
+
+
+/* =========================
+   DIFFERENT IMAGE SIZES
+========================= */
+
+/* Large */
+
+.work-large {
+
+  grid-column: span 2;
+
+  grid-row: span 2;
+}
+
+
+/* Tall */
+
+.work-tall {
+
+  grid-row: span 2;
+}
+
+
+/* Wide */
+
+.work-wide {
+
+  grid-column: span 2;
+}
+
+
+/* =========================
+   GALLERY ANIMATION
+========================= */
+
+@keyframes galleryReveal {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(50px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ==================================================
+   LARGE TABLETS
+================================================== */
+
 @media (max-width: 992px) {
+
   .portfolio {
+
     padding: 100px 20px;
   }
 
+
   .projects {
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
     gap: 20px;
   }
 
+
   .project {
+
     height: 350px;
   }
 
+
   .overlay h3 {
+
     font-size: 1.8rem;
   }
-}
 
-/* Tablets */
-@media (max-width: 768px) {
-  .portfolio {
-  padding: 120px 20px 80px;
+
+  /* Gallery */
+
+  .wk-images {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-auto-rows: 250px;
+
+    gap: 16px;
   }
 
+
+  .work-large {
+
+    grid-column: span 2;
+
+    grid-row: span 2;
+  }
+
+
+  .work-wide {
+
+    grid-column: span 2;
+  }
+
+
+  .work-tall {
+
+    grid-row: span 2;
+  }
+
+}
+
+
+/* ==================================================
+   TABLETS
+================================================== */
+
+@media (max-width: 768px) {
+
+  .portfolio {
+
+    padding: 120px 20px 80px;
+  }
+
+
   .portfolio h2 {
+
     margin-bottom: 40px;
   }
 
+
   .projects {
+
     grid-template-columns: 1fr;
+
     gap: 20px;
   }
 
+
   .project {
+
     height: 320px;
+
     border-radius: 20px;
   }
 
+
   .overlay h3 {
+
     font-size: 1.6rem;
   }
-}
 
-/* Mobile Phones */
-@media (max-width: 480px) {
-  .portfolio {
-  padding: 140px 20px 70px;
+
+  /* Gallery */
+
+  .wk-images {
+
+    grid-template-columns: 1fr;
+
+    grid-auto-rows: 320px;
+
+    gap: 18px;
+
+    margin-top: 30px;
   }
 
-  .portfolio h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
+
+  /* Reset special sizes */
+
+  .work-large,
+  .work-wide,
+  .work-tall {
+
+    grid-column: span 1;
+
+    grid-row: span 1;
   }
 
-  .projects {
-    gap: 15px;
-  }
 
-  .project {
-    height: 260px;
+  .work-image {
+
     border-radius: 18px;
   }
 
-  .overlay h3 {
-    font-size: 1.3rem;
-    padding: 0 10px;
-  }
 }
 
-/* Small Phones */
-@media (max-width: 360px) {
+
+/* ==================================================
+   MOBILE PHONES
+================================================== */
+
+@media (max-width: 480px) {
+
+  .portfolio {
+
+    padding: 140px 20px 70px;
+  }
+
+
+  .portfolio h2 {
+
+    font-size: 2rem;
+
+    margin-bottom: 30px;
+  }
+
+
+  .projects {
+
+    gap: 15px;
+  }
+
+
   .project {
+
+    height: 260px;
+
+    border-radius: 18px;
+  }
+
+
+  .overlay h3 {
+
+    font-size: 1.3rem;
+
+    padding: 0 10px;
+  }
+
+
+  /* Gallery */
+
+  .wk-images {
+
+    grid-template-columns: 1fr;
+
+    grid-auto-rows: 250px;
+
+    gap: 15px;
+  }
+
+
+  .work-image {
+
+    border-radius: 15px;
+  }
+
+
+  .work-image:hover {
+
+    transform: translateY(-5px) scale(1.01);
+  }
+
+}
+
+
+/* ==================================================
+   SMALL PHONES
+================================================== */
+
+@media (max-width: 360px) {
+
+  .portfolio {
+
+    padding-left: 15px;
+
+    padding-right: 15px;
+  }
+
+
+  .project {
+
     height: 220px;
   }
 
+
   .overlay h3 {
+
     font-size: 1.1rem;
   }
+
+
+  .wk-images {
+
+    grid-auto-rows: 220px;
+
+    gap: 12px;
+  }
+
+
+  .work-image {
+
+    border-radius: 12px;
+  }
+
 }
