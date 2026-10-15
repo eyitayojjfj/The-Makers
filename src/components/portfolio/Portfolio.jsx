@@ -8,7 +8,7 @@ export default function Portfolio() {
         <h2>Our Work</h2>
         <div className="wk-images">
            <div className="work-image work-large">
-            <img src="/images/201.jpeg" alt="The Makers project 1" />
+            <img src="/images/200.jpeg" alt="The Makers project 1" />
           </div>
 
           <div className="work-image">
@@ -28,7 +28,7 @@ export default function Portfolio() {
           </div>
 
           <div className="work-image work-wide">
-            <img src="/images/206.jpeg" alt="The Makers project 6" />
+            <img src="/images/201.jpeg" alt="The Makers project 6" />
           </div>
 
           <div className="work-image">
